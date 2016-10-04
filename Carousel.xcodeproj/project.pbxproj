@@ -20,6 +20,7 @@
 		BA74F2881D9D77D70086A14A /* CarouselUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA74F2871D9D77D70086A14A /* CarouselUITests.swift */; };
 		BA74F2971D9D79FC0086A14A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA74F2961D9D79FC0086A14A /* IntroViewController.swift */; };
 		BA74F2991D9D7D4A0086A14A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA74F2981D9D7D4A0086A14A /* LoginViewController.swift */; };
+		BADE223B1DA3638200766700 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE223A1DA3638200766700 /* CreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BA74F2891D9D77D70086A14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA74F2961D9D79FC0086A14A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		BA74F2981D9D7D4A0086A14A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BADE223A1DA3638200766700 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				BA5749E31D9DE16700AEB001 /* TimelineViewController.swift */,
 				BA4C7E391D9F22AA00B426A1 /* ConversationsViewController.swift */,
 				BA4C7E3B1D9F234100B426A1 /* SettingsViewController.swift */,
+				BADE223A1DA3638200766700 /* CreateViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				BA5749E01D9DD93400AEB001 /* Common.swift in Sources */,
 				BA74F2991D9D7D4A0086A14A /* LoginViewController.swift in Sources */,
+				BADE223B1DA3638200766700 /* CreateViewController.swift in Sources */,
 				BA4C7E3A1D9F22AA00B426A1 /* ConversationsViewController.swift in Sources */,
 				BA5749E21D9DDD7800AEB001 /* TutorialViewController.swift in Sources */,
 				BA74F2681D9D77D70086A14A /* AppDelegate.swift in Sources */,
