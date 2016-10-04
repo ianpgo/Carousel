@@ -12,6 +12,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var signinScrollView: UIScrollView!
     @IBOutlet weak var buttonParentView: UIView!
+    @IBOutlet weak var fieldParentView: UIView!
+    @IBOutlet weak var loginNavBar: UIImageView!
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -43,6 +45,29 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
             self.buttonParentView.frame.origin.y = self.buttonInitialY
             self.signinScrollView.contentOffset.y = self.signinScrollView.contentInset.bottom
             
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Set initial transform values 20% of original size
+        let transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        // Apply the transform properties of the views
+        loginNavBar.transform = transform
+        fieldParentView.transform = transform
+        // Set the alpha properties of the views to transparent
+        loginNavBar.alpha = 0
+        fieldParentView.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Animate the code within over 0.3 seconds...
+        UIView.animate(withDuration: 0.3) { () -> Void in
+            // Return the views transform properties to their default states.
+            self.fieldParentView.transform = CGAffineTransform.identity
+            self.loginNavBar.transform = CGAffineTransform.identity
+            // Set the alpha properties of the views to fully opaque
+            self.fieldParentView.alpha = 1
+            self.loginNavBar.alpha = 1
         }
     }
 
@@ -80,6 +105,20 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // If the scrollView has been scrolled down by 50px or more...
+        if scrollView.contentOffset.y <= -50 {
+            // Hide the keyboard
+            view.endEditing(true)
+        }
+    }
+    
+    // The keyboard is about to be hidden...
+    func keyboardWillHide(notification: NSNotification) {
+        // Move the buttons back down to it's original position
+        buttonParentView.frame.origin.y = buttonInitialY
     }
     
     func showValidationAlert(){

@@ -8,13 +8,18 @@
 
 import UIKit
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var takeSpinButton: UIButton!
     @IBOutlet weak var tutorialScrollView: UIScrollView!
     
+    @IBOutlet weak var scrollPageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tutorialScrollView.delegate = self
         tutorialScrollView.contentSize = CGSize(width: 1500, height: 667)
+        
+        takeSpinButton.alpha = 0
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +29,18 @@ class TutorialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Get the current page based on the scroll offset
+        var page : Int = Int(round(scrollView.contentOffset.x / 375))
+        
+        // Set the current page, so the dots will update
+        scrollPageControl.currentPage = page
+        
+        if page == 3{
+            scrollPageControl.isHidden = true
+            takeSpinButton.alpha = 1
+        }
+    }
 
     /*
     // MARK: - Navigation

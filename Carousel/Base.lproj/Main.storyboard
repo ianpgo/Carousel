@@ -50,7 +50,7 @@
                                         <rect key="frame" x="24" y="1250" width="322" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="X7c-QA-2XG" kind="push" id="dyC-i9-TQT"/>
+                                            <segue destination="X7c-QA-2XG" kind="push" animates="NO" id="dyC-i9-TQT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -64,6 +64,12 @@
                     <connections>
                         <outlet property="introImageView" destination="b0H-vs-VAc" id="Jjr-B8-hie"/>
                         <outlet property="introScrollView" destination="HPY-mR-4ye" id="xBg-b4-Gyr"/>
+                        <outlet property="tile1View" destination="G9h-q1-nbk" id="oeT-jD-ldZ"/>
+                        <outlet property="tile2View" destination="nTI-f7-ASK" id="9yk-0t-jQN"/>
+                        <outlet property="tile3View" destination="I3b-0T-E9p" id="w3M-TA-mf9"/>
+                        <outlet property="tile4View" destination="D1n-j8-BdH" id="2AK-lQ-m9t"/>
+                        <outlet property="tile5View" destination="pnF-io-4QX" id="DgD-N6-KIt"/>
+                        <outlet property="tile6View" destination="E7I-BK-dbm" id="2cX-JE-Gal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,6 +159,8 @@
                     <connections>
                         <outlet property="buttonParentView" destination="gFx-Za-ebO" id="Rml-Um-0EQ"/>
                         <outlet property="emailField" destination="rpL-ij-lFB" id="WFc-In-boK"/>
+                        <outlet property="fieldParentView" destination="dgs-oj-Erk" id="PKn-lC-GPK"/>
+                        <outlet property="loginNavBar" destination="IXW-dE-Zrf" id="Chd-cV-moJ"/>
                         <outlet property="passwordField" destination="eA7-y5-7oU" id="KJK-ui-Jsy"/>
                         <outlet property="signinScrollView" destination="cHL-pJ-RH5" id="2uP-0H-bpK"/>
                         <outlet property="signinSpinner" destination="oiX-vy-61C" id="WXH-mz-A6x"/>
@@ -176,7 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1500" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" id="nfS-bo-of0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="nfS-bo-of0">
                                 <frame key="frameInset"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -206,12 +214,20 @@
                                     </button>
                                 </subviews>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="hUX-xO-66G">
+                                <frame key="frameInset" minX="168" minY="605" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.84017485380000001" green="0.84019464249999998" blue="0.84018403289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.39607843139999999" green="0.57254901960000004" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1500" height="667"/>
                     <connections>
+                        <outlet property="scrollPageControl" destination="hUX-xO-66G" id="5JP-Cg-NG4"/>
+                        <outlet property="takeSpinButton" destination="pJc-3r-3bp" id="Cjk-IS-6bW"/>
                         <outlet property="tutorialScrollView" destination="nfS-bo-of0" id="Ifl-Mm-JmE"/>
                     </connections>
                 </viewController>
